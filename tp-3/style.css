@@ -1,66 +1,46 @@
-* {
-	margin: 0;
-	padding: 0;
-}
 body {
-	margin: 1rem;
-	background-color: #012;
-	color: #e6e8ff;
-	font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+font-size: 18px;
+background-color: #ffe;
+color: #210;
 }
-@media (width > 400px){
-	body{
-		background: rgb(40, 60, 80);
-	}
+#contenedor {
+max-width: 40ch;
+margin: 2rem auto;
+padding: 1rem;
 }
-@media (width < 800px){
-	h1 {
-	    text-align: center;
-    }
-}
-@media (min-height: 200px){
-	h1 {
-	    background-color: #333;
-    }
-}
-article {
-	margin: 0 auto
-}
-@media (orientation: landscape){
-	article {
-	    max-width: 50ch;
-    }
-}
-a {
-	color: #A06CD5
-}
-a:visited {
-	color: #E2CFEA
-}
-@media (hover: none){
-	a {
-	    background-color: #212;
-	    padding: 2px;
-    }
+h1 {
+font-size: 2rem;
+text-align: center;
 }
 p {
-	margin: 1rem 0;
+font-family: serif;
 }
-@media print{
-	p {
-	    font-family: serif;
-    }
+#primer-parrafo {
+font-size: 1.3rem;
+background-color: #cee;
 }
-figure {
-	text-align: center;
+p.importante em {
+font-weight: bold;
+color: #933;
 }
-img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	margin: 0 auto;
-	border-radius: 10px;
+p.novelas a {
+outline: none;
+text-decoration: none;
 }
-@media screen(width >= 800px) and screen(width < 900px){
-	img;
+p.novelas a:hover {
+text-decoration: underline;
+background-color: #ccd;
+}
+body p.fuente {
+color: #000 !important;
+font-size: 0.9rem;
+opacity: 100%;
+text-align: center;
+}
+a {
+	outline: 1px solid #333;
+}
+.complicado {
+	font-weight: bold;
+	color: #c92;
 }
