@@ -1,0 +1,33 @@
+body {
+    background: #222;
+}
+
+p {
+    font-family: sans-serif;
+    color: #ee6;
+}
+
+h1, h2, h3 {
+    color: #eee;
+}
+
+strong {
+    border-bottom-color: #fff;
+}
+
+span.the-force {
+    background: #444;
+    font-weight: 700;
+}
+
+span.light-side {
+    color: #66f;
+}
+
+span.dark-side {
+    color: #f33;
+}
+
+ul#og-trilogy {
+    list-style-type: circle;
+}
