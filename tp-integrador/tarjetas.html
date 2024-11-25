@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tarjetas de presentación ubicadas a los costados de la pantalla">
+    <title>Tarjetas de Presentación.</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_tarjetas.css">
+    <script src="API.js"></script>
+</head>
+<body>
+    <!-- Tarjetas lado izquierdo -->
+    <div class="contenedor-izquierda" id="contenedor-izquierda">
+        <div class="tarjeta">
+            <div class="foto" id="fotinha"></div>
+            <div class="nombre" id="nombre"></div>
+            <div class="descripcion" id="descripzinha"></div>
+        </div>
+
+        <div class="tarjeta">
+            <div class="foto"></div>
+            <div class="nombre">Nombre 3</div>
+            <div class="descripcion">Descripción de la persona 3.</div>
+        </div>
+    </div>
+
+    <!-- Tarjetas lado derecho -->
+    <div class="contenedor-derecha">
+        <div class="tarjeta">
+            <div class="foto"></div>
+            <div class="nombre">Nombre 2</div>
+            <div class="descripcion">Descripción de la persona 2.</div>
+        </div>
+
+        <div class="tarjeta">
+            <div class="foto"></div>
+            <div class="nombre">Nombre 4</div>
+            <div class="descripcion">Descripción de la persona 4.</div>
+        </div>
+    </div>
+    <script>
+        const node = document.createElement("p");
+        const descrip= document.createElement("p");
+        const fota = document.createElement("img");
+        async function datos(){
+            var respuesta = await fetch("https://api.disneyapi.dev/character/308");
+            var personaje = await respuesta.json();
+            const textnode = document.createTextNode(personaje.data.name);
+            node.appendChild(textnode);
+            const descnode = document.createTextNode("Una reina.");
+            descrip.appendChild(descnode);
+            fota.src = personaje.data.imageUrl;
+            fota.className = "foto";
+            fota.width = 100;
+            fota.height = 100;
+        }
+        datos();
+        document.getElementById("nombre").appendChild(node);
+        document.getElementById("descripzinha").appendChild(descrip);
+        document.getElementById("fotinha").appendChild(fota);
+
+        function tarjeta(){
+            const dividid = document.getElementById('contenedor-izquierda');
+            const tarje = document.createElement("div");
+            tarje.className = "tarjeta";
+            dividid.appendChild(tarje);
+            const foto = document.createElement("img");
+            foto.className = "foto";
+            tarje.appendChild(foto);
+            const nome = document.createElement("p");
+            nome.className = "nombre";
+            const nomee = document.createTextNode("Nombre del personaje.");
+            nome.appendChild(nomee);
+            tarje.appendChild(nome);
+            const descri = document.createElement("p");
+            descri.className = "descripcion";
+            const descrii = document.createTextNode("Descripción.");
+            descri.appendChild(descrii);
+            tarje.appendChild(descri);
+        }
+        tarjeta();
+        tarjeta();
+    </script>
+</body>
+</html>

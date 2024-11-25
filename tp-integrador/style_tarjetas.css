@@ -1,0 +1,66 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-izquierda,
+.contenedor-derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
+    position: absolute;
+}
+
+.contenedor-izquierda {
+    left: 0;
+    padding-left: 150px; /* Espacio desde el borde izquierdo */
+}
+
+.contenedor-derecha {
+    right: 0;
+    padding-right: 150px; /* Espacio desde el borde derecho */
+}
+
+.tarjeta {
+    width: 200px;
+    height: 250px;
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3%);
+}
+
+.foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.nombre {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.descripcion {
+    font-size: 14px;
+    color: #555;
+}
